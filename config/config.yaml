@@ -1,0 +1,12 @@
+project:
+  name: my_project
+  title: My Project Title
+  type:
+    - type1
+    - type2
+  description: This is a sample project configuration file.
+  owner: John Doe
+  organisation: My Organization
+
+reproducibility:
+  random_seed: 42

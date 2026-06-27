@@ -1,0 +1,11 @@
+project_root: .
+
+directories:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  external: data/external
+  cache: cache
+  logs: logs
+  resukts: results
+  reports: reports
