@@ -1,96 +1,227 @@
-# Ignore anything with "checkpoints"
-*checkpoints*
+################################################################################
+# OS / system files
+################################################################################
 
-# Ignore packaging metadata directories
-*.egg-info/
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# Ignore Python cache
+*~
+*.swp
+*.swo
+
+################################################################################
+# Python cache / bytecode
+################################################################################
+
 __pycache__/
 **/__pycache__/
-
-# Ignore Python bytecode
 *.pyc
 *.pyo
 
-# Ignore variables file
-variables.py
+################################################################################
+# Packaging
+################################################################################
 
-# Ignore HDF5-based files
-*.h5ad
-*.h5Seurat
-*.h5
+*.egg-info/
+build/
+dist/
 
-# Ignore R data files
-*.rds
-*.RData
+################################################################################
+# Virtual environments
+################################################################################
 
-# Ignore Matrix Market files and compressed versions
+venv/
+.venv/
+env/
+conda-env/
+
+################################################################################
+# IDEs
+################################################################################
+
+.vscode/
+.idea/
+*.code-workspace
+
+################################################################################
+# Jupyter / notebooks
+################################################################################
+
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+################################################################################
+# Logs (runtime artifacts only)
+################################################################################
+
+logs/
+*.log
+
+# HPC / cluster logs
+slurm-*.out
+slurm-*.err
+*.out
+*.err
+
+################################################################################
+# Python testing / tooling
+################################################################################
+
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+################################################################################
+# Conda / environment artifacts
+################################################################################
+
+*.conda
+environment.yml.bak
+
+################################################################################
+# Temporary / misc
+################################################################################
+
+*.tmp
+*.bak
+tmp/
+temp/
+.sync/
+
+################################################################################
+# Workflow engines
+################################################################################
+
+# Nextflow
+.nextflow/
+work/
+*.nextflow.log
+
+# Snakemake
+.snakemake/
+
+################################################################################
+# Bioinformatics - sequencing data (raw / large files)
+################################################################################
+
+*.bam
+*.bai
+*.cram
+
+*.fastq
+*.fastq.gz
+
+*.fasta
+*.fa
+*.fai
+*.fasta.fai
+
+*.cloupe
+*.vloupe
+
+*contig_info.pb
+*vdj_reference/
+
+################################################################################
+# Matrix Market formats
+################################################################################
+
 *.mtx
 *.mtx.*
 *.mtx.gz
 *.mtx.zip
 
-# Ignore model files
+################################################################################
+# Model artifacts
+################################################################################
+
 *.pt
 *.sav
 *.pkl
 
-# Ignore common compressed archive formats (including gzip and .tar.gz)
-*.tar
-*.tar.gz
-*.gz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.Z
+################################################################################
+# R artifacts
+################################################################################
 
-# Ignore virtual environments
-venv/
-.venv/
+*.rds
+*.RData
+*.Rhistory
+*.RDataTmp
+.Rproj.user/
+.Ruserdata
 
-# Ignore skipped files list
-skipped_files_abs_paths.txt
+################################################################################
+# Single-cell / multimodal analysis objects
+# (ONLY ignore when stored in data layers)
+################################################################################
 
-# General temporary or binary files
-*.tmp
-*.bak
+# These are treated as derived artifacts, not source data
+data/interim/*.h5ad
+data/interim/*.h5Seurat
+data/interim/*.h5mu
 
-# Ignore specific bioinformatics and analysis files
-*_cmdline
-*_invocation
-*possorted_genome_bam.bam.bai
-*.bam
-*.bai
-*.fasta
-*.fasta.fai
-*.fai
-*.fastq
+data/processed/objects/*.h5ad
+data/processed/objects/*.h5Seurat
+data/processed/objects/*.h5mu
 
-# Ignore CSV outputs from clustering or component analysis ONLY inside folders ending with graphclust or clusters
+# Optional: generic HDF5 (use with caution)
+*.h5
+
+################################################################################
+# 10x Genomics outputs
+################################################################################
+
+**/filtered_feature_bc_matrix/**
+**/raw_feature_bc_matrix/**
+
+################################################################################
+# Generated analysis outputs (domain-specific)
+################################################################################
+
 **/*graphclust/clusters.csv
 **/*clusters/clusters.csv
 **/*graphclust/differential_expression.csv
 **/*clusters/differential_expression.csv
 
-# Ignore 10x Genomics and sequencing output formats
-*.cloupe
-*.vloupe
-*contig_info.pb
-*vdj_reference/
+################################################################################
+# Reference genomes / annotation bundles
+################################################################################
 
-# Ignore all files inside directories whose last part ends with GRCh38-2020-A or GRCh38-7_0_0
-**/*GRCh38-2020-A/** 
+**/*GRCh38-2020-A/**
 **/*GRCh38-7_0_0/**
 
-# Ignore any files inside filtered_feature_bc_matrix or raw_feature_bc_matrix directories
-**/filtered_feature_bc_matrix/**
-**/raw_feature_bc_matrix/**
+################################################################################
+# Gene / barcode files (generated or redundant copies)
+################################################################################
 
-# Ignore specific tab-separated and compressed gene annotation files (compressed and uncompressed)
 barcodes.tsv
 barcodes.tsv.gz
 features.tsv
 features.tsv.gz
 genes.tsv
 genes.tsv.gz
+
+################################################################################
+# Archives (safe set only — no loose .gz)
+################################################################################
+
+*.tar
+*.tar.gz
+*.zip
+*.bz2
+*.xz
+*.7z
+*.rar
+*.Z
+
+################################################################################
+# Data lifecycle policy (structural enforcement)
+################################################################################
+
+data/cache/
+logs/
+results/
+work/
