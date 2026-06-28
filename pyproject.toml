@@ -1,0 +1,85 @@
+[project]
+name = "project_name"
+version = "0.1.0"
+description = "Project description"
+requires-python = ">=3.11"
+
+################################################################################
+# Black
+################################################################################
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+extend-exclude = '''
+(
+    ^data/
+  | ^results/
+  | ^logs/
+)
+'''
+
+################################################################################
+# Ruff
+################################################################################
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+exclude = [
+    "data",
+    "results",
+    "logs",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "I",   # import sorting
+    "W",   # warnings
+    "UP",  # pyupgrade
+    "B"    # bugbear
+]
+
+ignore = [
+    "E501"
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+################################################################################
+# Pytest
+################################################################################
+
+[tool.pytest.ini_options]
+
+testpaths = ["tests"]
+
+pythonpath = ["src"]
+
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+]
+
+################################################################################
+# Coverage
+################################################################################
+
+[tool.coverage.run]
+
+source = ["src"]
+
+omit = [
+    "tests/*",
+]
+
+[tool.coverage.report]
+
+show_missing = true
+skip_covered = false

@@ -1,0 +1,29 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: envs/environment-dev.yml
+          activate-environment: project-dev
+          auto-activate-base: false
+
+      - name: Black
+        shell: bash -el {0}
+        run: black --check .
+
+      - name: Ruff
+        shell: bash -el {0}
+        run: ruff check .

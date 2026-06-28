@@ -1,0 +1,19 @@
+name: project-dev
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.11
+  - pip
+
+  # Development tools
+  - black
+  - ruff
+  - pre-commit
+  - pytest
+  - coverage
+
+  - pip:
+      - -e .
