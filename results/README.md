@@ -41,7 +41,6 @@ flowchart TD
     A --> M[Models]
     A --> R[Reports]
     A --> X[Exports]
-    A --> L[Logs]
     A --> S[Supplementary]
 ```
 
@@ -56,7 +55,6 @@ results/
 ├── embeddings/
 ├── exports/
 ├── figures/
-├── logs/
 ├── models/
 ├── reports/
 ├── supplementary/
@@ -119,23 +117,6 @@ Visual outputs generated from analyses.
 - Must be reproducible
 - Prefer structured subfolders by analysis type
 - Include publication-ready formats where appropriate (PDF/SVG/PNG)
-
----
-
-## logs/
-
-Execution and runtime logs from workflows and scripts.
-
-### Examples
-- Pipeline logs
-- Error logs
-- Runtime summaries
-- Resource usage outputs
-
-### Rules
-- Prefer automatic generation
-- Not part of analytical results
-- Can be regenerated unless tied to publication records
 
 ---
 
