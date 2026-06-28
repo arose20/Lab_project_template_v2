@@ -1,6 +1,6 @@
 # Project Name
 
-![CI](https://github.com/arose20/Lab_project_template_v2/actions/workflows/main.yml/badge.svg)
+![CI](https://github.com/arose20/Lab_project_template_v2/actions/workflows/update-readme-badges.yml/badge.svg)
 ![Contributors](https://img.shields.io/github/contributors/arose20/Lab_project_template_v2?logo=github)
 ![Last Commit](https://img.shields.io/github/last-commit/arose20/Lab_project_template_v2)
 ![License](https://img.shields.io/github/license/arose20/Lab_project_template_v2)
