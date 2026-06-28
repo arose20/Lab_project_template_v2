@@ -64,12 +64,12 @@ This may include:
 
 All outputs are fully reproducible and stored in `results/`:
 
-- `results/figures/` → visual outputs  
-- `results/tables/` → structured results  
-- `results/models/` → trained or fitted models  
-- `results/embeddings/` → latent representations  
-- `results/reports/` → generated summaries  
-- `results/exports/` → external data formats  
+- `results/figures/` → visual outputs
+- `results/tables/` → structured results
+- `results/models/` → trained or fitted models
+- `results/embeddings/` → latent representations
+- `results/reports/` → generated summaries
+- `results/exports/` → external data formats
 
 ---
 

@@ -8,7 +8,7 @@ It is designed to be **modality-agnostic, method-agnostic, and reproducible**, m
 
 # Core Design Principle
 
-> **`data/` contains persistent datasets used as inputs  
+> **`data/` contains persistent datasets used as inputs
 > `results/` contains outputs generated from analyses**
 
 - Anything reusable as an input for further analysis belongs in `data/processed/`

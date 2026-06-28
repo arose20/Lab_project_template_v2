@@ -19,9 +19,9 @@ The system is intentionally **domain-agnostic** and does not assume any specific
 
 This framework is built around a simple model:
 
-> **Data defines inputs**  
-> **Code defines transformations**  
-> **Workflows define execution**  
+> **Data defines inputs**
+> **Code defines transformations**
+> **Workflows define execution**
 > **Results define outputs**
 
 Everything in the repository maps cleanly to one of these roles.
