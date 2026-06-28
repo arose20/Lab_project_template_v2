@@ -5,20 +5,25 @@ on:
   pull_request:
 
 jobs:
-
   lint:
-
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
-
-      - uses: conda-incubator/setup-miniconda@v3
+      - name: Setup conda environment
+        uses: conda-incubator/setup-miniconda@v3
         with:
           environment-file: envs/environment-dev.yml
           activate-environment: project-dev
           auto-activate-base: false
+          channels: conda-forge,bioconda
+          channel-priority: flexible
+
+      - name: Install project
+        shell: bash -el {0}
+        run: pip install .
 
       - name: Black
         shell: bash -el {0}
