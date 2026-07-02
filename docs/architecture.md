@@ -35,34 +35,26 @@ Everything in the repository maps cleanly to one of these roles.
 ```mermaid
 flowchart TD
 
-    subgraph Inputs
-        D[Data]
-        C[Config]
-        E[Environment]
+    A["Inputs<br/>data • config • envs"]
+
+    B["Reusable Logic<br/>src"]
+
+    subgraph X["Execution"]
+        W["workflows"]
+        P["scripts"]
+        N["notebooks"]
     end
 
-    subgraph Logic
-        S[Source Code (src)]
-        W[Workflows]
-    end
+    D["Outputs<br/>results • logs"]
 
-    subgraph Interfaces
-        I[Scripts / Notebooks / CLI]
-    end
+    I["Interfaces<br/>CLI • Python API • External Tools"]
 
-    subgraph Outputs
-        R[Results]
-        L[Logs]
-    end
+    A --> B
+    B --> X
+    X --> D
 
-    D --> W
-    C --> W
-    E --> W
-    S --> W
-
-    W --> R
-    W --> L
-    S --> I
+    I -.-> X
+    P -.-> N
 ```
 
 ---
