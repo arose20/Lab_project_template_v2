@@ -13,26 +13,38 @@
 ################################################################################
 
 # Data
-data/*
+# Ignore everything under data/
+data/**
 !data/**/
 !data/**/README.md
+
+# Keep provenance files tracked
+!data/provenance/
 !data/provenance/**
 
-# Runtime and pipeline outputs
-logs/*
-!logs/external/
 
-results/*
+# Runtime and pipeline outputs
+
+# Logs
+logs/**
+!logs/external/
+!logs/external/**
+
+# Results
+results/**
 !results/**/
 !results/**/README.md
 
-work/*
+# Work
+work/**
 !work/**/
 !work/**/README.md
 
 # Exploratory outputs (keep README tracked)
-exploratory/*
+exploratory/**
+!exploratory/
 !exploratory/README.md
+
 
 # Temporary folders
 tmp/
