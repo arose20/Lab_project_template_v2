@@ -9,10 +9,14 @@ dependencies:
   - pip
 
   # Development tools
-  - black
-  - ruff
+  - black=26.5.1
+  - ruff=0.16.0
   - pre-commit
   - pytest
   - coverage
   - pyyaml
   - jupyter
+  - nbstripout
+
+  - pip:
+      - "black[jupyter]==26.5.1"
